@@ -1,4 +1,7 @@
-function validateLoginForm() {
+let btn = document.getElementById("loginBtn");
+// console.log("test");
+btn.onclick= function () {
+  console.log("test");
   const email = document.getElementById("loginEmail").value.trim();
   const password = document.getElementById("loginPassword").value;
 

@@ -1,8 +1,7 @@
 <?php
-// Database connection
 $host = "localhost";
-$user = "root";       // adjust if different
-$pass = "";           // your MySQL password
+$user = "root";       
+$pass = "";          
 $dbname = "registration";
 
 $conn = new mysqli($host, $user, $pass, $dbname);
@@ -20,7 +19,7 @@ $confirm = $_POST['confirm'];
 $hashed = password_hash($password, PASSWORD_BCRYPT);
 
 // Insert user
-$stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO user (name, email, password) VALUES (?, ?, ?)");
 $stmt->bind_param("sss", $username, $email, $hashed);
 
 if ($stmt->execute()) {

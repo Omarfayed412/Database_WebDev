@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f8f8f8;
+    }
+    h1 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="welcome-message">Loading...</h1>
+
+  <script>
+    // Fetch username from PHP backend
+    fetch("welcome.php")
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          document.getElementById("welcome-message").textContent = `Welcome ${data.username}!`;
+        } else {
+          document.getElementById("welcome-message").textContent = "Welcome Guest!";
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        document.getElementById("welcome-message").textContent = "Error loading username.";
+      });
+  </script>
+</body>
+</html>

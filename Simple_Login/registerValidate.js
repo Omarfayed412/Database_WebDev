@@ -1,8 +1,10 @@
-function validateRegisterForm() {
-  const username = document.getElementById("username").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value;
-  const confirm = document.getElementById("confirm").value;
+let btn = document.getElementById("submitBtn");
+
+btn.onclick = function validateRegisterForm() {
+  const username = document.getElementById("nameReg").value.trim();
+  const email = document.getElementById("emailReg").value.trim();
+  const password = document.getElementById("passReg").value;
+  const confirm = document.getElementById("confReg").value;
 
 
   // Username validation
